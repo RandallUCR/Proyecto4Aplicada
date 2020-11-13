@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/12/2020 12:31:09 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-S3M5REQ9"
+  DTS:CreatorName="LAPTOP-S3M5REQ9\congr"
+  DTS:DTSID="{64752F80-9E5F-452B-8CEA-7C5DF8446FCE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="5130"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E94BBF0F-79CA-4FBD-86A3-FC9B63C6E5B1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Cliente"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{9AA197C7-C9B6-41D1-AD4E-7FDF5EB67A79}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Cliente"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Cliente\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DW].[CLIENTES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Cliente\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{0233E521-2E3E-45CF-A1E2-E74ED4B10670}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.10.IF6201_Proyecto3_JeMaPaFaRa.laboratorios]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cedula]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="cedula"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CEDULA]"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[cedula]" />
+                    <inputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nombre"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE]"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[apellido_uno]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="apellido_uno"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[APELLIDO_UNO]"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[apellido_uno]" />
+                    <inputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[apellido_dos]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="apellido_dos"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[APELLIDO_DOS]"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[apellido_dos]" />
+                    <inputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_ins]"
+                      cachedDataType="dbDate"
+                      cachedName="fecha_ins"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_ins]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                      dataType="i4"
+                      name="ID_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CEDULA]"
+                      dataType="wstr"
+                      length="12"
+                      name="CEDULA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="20"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[APELLIDO_UNO]"
+                      dataType="wstr"
+                      length="20"
+                      name="APELLIDO_UNO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[APELLIDO_DOS]"
+                      dataType="wstr"
+                      length="20"
+                      name="APELLIDO_DOS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
+                      dataType="dbDate"
+                      name="FECHA_INS" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Cliente\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Cliente\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Cliente\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Cliente\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+cedula,
+nombre,
+apellido_uno,
+apellido_dos, 
+fecha_ins
+FROM aplicada.clientes</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Cliente\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{B38614DC-11C9-43C9-B72F-8FA68EDEE94C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.7.b61976_aplicada.laboratorios]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[cedula]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cedula]"
+                      length="50"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[cedula]"
+                      name="cedula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre]"
+                      length="50"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre]"
+                      name="nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[apellido_uno]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[apellido_uno]"
+                      length="50"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[apellido_uno]"
+                      name="apellido_uno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[apellido_dos]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[apellido_dos]"
+                      length="50"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[apellido_dos]"
+                      name="apellido_dos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_ins]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fecha_ins]"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].Columns[fecha_ins]"
+                      name="fecha_ins"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cedula]"
+                      dataType="wstr"
+                      length="9"
+                      name="cedula" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre]"
+                      dataType="wstr"
+                      length="15"
+                      name="nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[apellido_uno]"
+                      dataType="wstr"
+                      length="20"
+                      name="apellido_uno" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[apellido_dos]"
+                      dataType="wstr"
+                      length="20"
+                      name="apellido_dos" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fecha_ins]"
+                      dataType="dbDate"
+                      name="fecha_ins" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cedula]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cedula]"
+                      name="cedula" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre]"
+                      name="nombre" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[apellido_uno]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[apellido_uno]"
+                      name="apellido_uno" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[apellido_dos]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[apellido_dos]"
+                      name="apellido_dos" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fecha_ins]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fecha_ins]"
+                      name="fecha_ins" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Cliente.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Cliente\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Cliente\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Data Flow Cliente"
+          TopLeft="96,32" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Cliente">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Cliente\OLE DB Source"
+          TopLeft="63,29" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Cliente\OLE DB Destination"
+          TopLeft="710,262" />
+        <EdgeLayout
+          Id="Package\Data Flow Cliente.Paths[OLE DB Source Output]"
+          TopLeft="141.5,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="657,191"
+              Start="0,0"
+              End="657,183.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,91.5"
+                    Point2="0,95.5"
+                    Point3="4,95.5" />
+                  <mssgle:LineSegment
+                    End="653,95.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="653,95.5"
+                    Point2="657,95.5"
+                    Point3="657,99.5" />
+                  <mssgle:LineSegment
+                    End="657,183.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Cliente\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Cliente\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
