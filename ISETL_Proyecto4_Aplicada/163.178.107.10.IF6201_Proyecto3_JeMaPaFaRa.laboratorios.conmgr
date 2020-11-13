@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="163.178.107.10.IF6201_Proyecto3_JeMaPaFaRa.laboratorios"
+  DTS:DTSID="{0233E521-2E3E-45CF-A1E2-E74ED4B10670}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=163.178.107.10;User ID=laboratorios;Initial Catalog=IF6201_Proyecto3_JeMaPaFaRa;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATxUMEA8IRUKNMMa+rwyMiwAAAAACAAAAAAAQZgAAAAEAACAAAAAnluXBY/BLncHF2pobXo80jKaovhOzuvqBEyMCwt6QrAAAAAAOgAAAAAIAACAAAAC1XEPjx04DStf5+jhE1nP7Oj5SHDzES1cCam16naQrCoAAAAC/zEl6T46DddPTA2V67L/vh0cpQ8DN2HrEN1Ta2Qm5cPMdQsfg/a8lu59AcLiJlQdkz8ivkbEi19EVmGJStCvCZvfsKo/gAsYDlUuUyb3kPaK8F/Na9gdIdmbwrleIbhVvCl7JR2nmu7ofJXNjGN/TDcBmTbUVGTvSz+D+RIEg+EAAAABzkOLqpG0dynvlcym7ojh8drumra0Ow2z8Njjt9GApWIlHbcWEIR1lZuf5T/X6hWCIEqJPaxeTsKQJX7rcGLaB</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
