@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=163.178.107.10;User ID=laboratorios;Initial Catalog=IF6201_Proyecto3_JeMaPaFaRa;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATxUMEA8IRUKNMMa+rwyMiwAAAAACAAAAAAAQZgAAAAEAACAAAAAoqG0ZrbqLxgfDgki/ojggzU0NtnMqcErnKRayfws6zgAAAAAOgAAAAAIAACAAAAC3JadliERiyRdKZPeQPS0/xp6GtMvOwSSr/IwcPj/bnIAAAADHnP9xOG4U7EDDHaAs+lREme1UftEZs8CFyytblFVr6lVah/Hiq+mwbP5vH9k6vVPlCKA/y2nkbqgTndQxJJyS2POmA1r3irgyp0R8Fjk/O6EjLV0Avj7MDsuJ3SIm95UW2FbNpDdKySxEbrIgpxSkVwzCEgZqmIj5ynwqHiCcdUAAAADXn39a5uQbBQ5xpEoAm8GgZWtIGLF/SPygGVtm+T4antptUhtlVhCBYyxTEYwSDYS8+funn0pXKkEsUxzqUeD6</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATxUMEA8IRUKNMMa+rwyMiwAAAAACAAAAAAAQZgAAAAEAACAAAAD6GO8TU4JZdGYpI6NQxdW1/J5qUtI4pWNLSV2cxCtMsgAAAAAOgAAAAAIAACAAAAC7FquwMWbE/HiijKYd1c/fehkLB6b5Tc5IftI1crrYY4AAAABm5WSwqxEhs96Iwtepz+XxEDwBJ4HJVn6LTWaE8h7bUhN52tVT7mG6WhHZyG0Kp9hozFD+lwPJCa6xbnfOazUOhTlgaF44EBO4ITENewUkX5woGEHXSLOE30Ixr9BqpJzYscniXWu/ApbA37aud5y/1rGSKMbPkvr95sI25c5N1UAAAACIMo71AMMW4qwP7sSR6/tsZDXzZLsvB3bq/7YKPUe9WjdkQZLKaeZE+XWJLHmNO/rbhzwo94jSuDebDKeSFCZp</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
