@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{C6032885-C6AA-4768-9D69-C1EF53BFF33D}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{3ADA9F79-6A35-4812-AFCA-AC8FDB85AD49}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -431,330 +431,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Correo"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{CE6126EA-5EF9-43A7-9481-858DCC12ED8D}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Correo"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Data Flow Correo\ODBC Source"
-              componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="ODBC Source"
-              name="ODBC Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="The name of the table to be fetched."
-                  expressionType="Notify"
-                  name="TableName">"aplicada"."correos"</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the number of rows fetched per batch."
-                  expressionType="Notify"
-                  name="BatchSize">1000</property>
-                <property
-                  dataType="System.Int32"
-                  description="Determines the chunk size allocation for LOB columns"
-                  expressionType="Notify"
-                  name="LobChunkSize">32768</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
-                  expressionType="Notify"
-                  name="ExposeCharColumnsAsUnicode">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
-                  expressionType="Notify"
-                  name="StatementTimeout">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The code page to use when code page information is unavailable from the data source."
-                  expressionType="Notify"
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Int32"
-                  description="The method used for fetching data."
-                  expressionType="Notify"
-                  name="FetchMethod">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="The ODBC C data type for binding numeric data."
-                  expressionType="Notify"
-                  name="BindNumericAs">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
-                  expressionType="Notify"
-                  name="BindCharColumnsAs">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The mode used to access the database."
-                  expressionType="Notify"
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Correo\ODBC Source.Connections[ODBCConnection]"
-                  connectionManagerID="{85C4E8F7-59C3-457D-B437-233A966FB871}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.7.b61976_aplicada.laboratorios1]"
-                  description="The ODBC runtime connection used to access the database."
-                  name="ODBCConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output]"
-                  errorRowDisposition="FailComponent"
-                  name="ODBC Source Output"
-                  truncationRowDisposition="FailComponent">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
-                      name="id" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[correo]"
-                      dataType="wstr"
-                      externalMetadataColumnId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[correo]"
-                      length="100"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[correo]"
-                      name="correo" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]"
-                      dataType="dbDate"
-                      externalMetadataColumnId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]"
-                      name="fecha_ins" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[correo]"
-                      dataType="wstr"
-                      length="100"
-                      name="correo" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
-                      dataType="i4"
-                      name="id_cliente" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      dataType="dbDate"
-                      name="fecha_ins" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output]"
-                  isErrorOut="true"
-                  name="ODBC Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
-                      name="id" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[correo]"
-                      dataType="wstr"
-                      externalMetadataColumnId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[correo]"
-                      length="100"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[correo]"
-                      name="correo" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[fecha_ins]"
-                      dataType="dbDate"
-                      externalMetadataColumnId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[fecha_ins]"
-                      name="fecha_ins" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Correo\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DW].[CORREOS]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Correo\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{BA736A8D-B001-4FEE-B7F7-32377F5A382F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.10.IF6201_Proyecto3_JeMaPaFaRa.laboratorios]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
-                      cachedDataType="i4"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[correo]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="correo"
-                      externalMetadataColumnId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CORREO]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[correo]" />
-                    <inputColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_ins]"
-                      cachedDataType="dbDate"
-                      cachedName="fecha_ins"
-                      externalMetadataColumnId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
-                      lineageId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      dataType="i4"
-                      name="ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CORREO]"
-                      dataType="wstr"
-                      length="100"
-                      name="CORREO" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
-                      dataType="dbDate"
-                      name="FECHA_INS" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Correo\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Correo\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Correo\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Correo\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Data Flow Correo.Paths[ODBC Source Output]"
-              endId="Package\Data Flow Correo\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="ODBC Source Output"
-              startId="Package\Data Flow Correo\ODBC Source.Outputs[ODBC Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Data Flow Detalle_Orden"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -1074,13 +750,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Direccion"
+      DTS:refId="Package\Data Flow Fecha"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{5ED63906-E065-4A10-AA8F-53C1300C5169}"
+      DTS:DTSID="{1958C26E-C46B-4980-808B-3C5D0D8125D1}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Direccion"
+      DTS:ObjectName="Data Flow Fecha"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1088,7 +764,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Direccion\ODBC Source"
+              refId="Package\Data Flow Fecha\ODBC Source"
               componentClassID="Microsoft.SSISODBCSrc"
               contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="ODBC Source"
@@ -1100,13 +776,18 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"aplicada"."direcciones"</property>
+                  name="TableName"></property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+aplicada.ordenes.id AS ID,
+extract (day from aplicada.ordenes.fecha) AS DIA,
+extract (month from aplicada.ordenes.fecha) AS MES,
+extract (year from aplicada.ordenes.fecha) AS ANNO
+FROM aplicada.ordenes</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -1152,11 +833,11 @@
                   description="The mode used to access the database."
                   expressionType="Notify"
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">1</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Direccion\ODBC Source.Connections[ODBCConnection]"
+                  refId="Package\Data Flow Fecha\ODBC Source.Connections[ODBCConnection]"
                   connectionManagerID="{85C4E8F7-59C3-457D-B437-233A966FB871}:external"
                   connectionManagerRefId="Project.ConnectionManagers[163.178.107.7.b61976_aplicada.laboratorios1]"
                   description="The ODBC runtime connection used to access the database."
@@ -1164,86 +845,95 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output]"
+                  refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output]"
                   errorRowDisposition="FailComponent"
                   name="ODBC Source Output"
                   truncationRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
                       name="id" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[direcciones]"
-                      dataType="wstr"
-                      externalMetadataColumnId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[direcciones]"
-                      length="200"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[direcciones]"
-                      name="direcciones" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[dia]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[dia]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[dia]"
+                      name="dia" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]"
-                      dataType="dbDate"
-                      externalMetadataColumnId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]"
-                      name="fecha_ins" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[mes]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[mes]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[mes]"
+                      name="mes" />
+                    <outputColumn
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[anno]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[anno]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[anno]"
+                      name="anno" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
                       dataType="i4"
                       name="id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[direcciones]"
-                      dataType="wstr"
-                      length="200"
-                      name="direcciones" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[dia]"
+                      dataType="r8"
+                      name="dia" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
-                      dataType="i4"
-                      name="id_cliente" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[mes]"
+                      dataType="r8"
+                      name="mes" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      dataType="dbDate"
-                      name="fecha_ins" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[anno]"
+                      dataType="r8"
+                      name="anno" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output]"
+                  refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output]"
                   isErrorOut="true"
                   name="ODBC Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
                       name="id" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[direcciones]"
-                      dataType="wstr"
-                      externalMetadataColumnId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[direcciones]"
-                      length="200"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[direcciones]"
-                      name="direcciones" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[dia]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[dia]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[dia]"
+                      name="dia" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[fecha_ins]"
-                      dataType="dbDate"
-                      externalMetadataColumnId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[fecha_ins]"
-                      name="fecha_ins" />
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[mes]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[mes]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[mes]"
+                      name="mes" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[anno]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[anno]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[anno]"
+                      name="anno" />
+                    <outputColumn
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1252,7 +942,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Direccion\OLE DB Destination"
+              refId="Package\Data Flow Fecha\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -1267,7 +957,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DW].[DIRECCIONES]</property>
+                  name="OpenRowset">[DW].[FECHA]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1309,7 +999,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Direccion\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Fecha\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{BA736A8D-B001-4FEE-B7F7-32377F5A382F}:external"
                   connectionManagerRefId="Project.ConnectionManagers[163.178.107.10.IF6201_Proyecto3_JeMaPaFaRa.laboratorios]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1317,68 +1007,76 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
                       cachedDataType="i4"
                       cachedName="id"
-                      externalMetadataColumnId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[id]" />
+                      externalMetadataColumnId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[id]" />
                     <inputColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[direcciones]"
-                      cachedDataType="wstr"
-                      cachedLength="200"
-                      cachedName="direcciones"
-                      externalMetadataColumnId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DIRECCIONES]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[direcciones]" />
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dia]"
+                      cachedDataType="r8"
+                      cachedName="dia"
+                      externalMetadataColumnId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DIA]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[dia]" />
                     <inputColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_ins]"
-                      cachedDataType="dbDate"
-                      cachedName="fecha_ins"
-                      externalMetadataColumnId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
-                      lineageId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]" />
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mes]"
+                      cachedDataType="r8"
+                      cachedName="mes"
+                      externalMetadataColumnId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MES]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[mes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[anno]"
+                      cachedDataType="r8"
+                      cachedName="anno"
+                      externalMetadataColumnId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ANNO]"
+                      lineageId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output].Columns[anno]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DIRECCIONES]"
-                      dataType="wstr"
-                      length="200"
-                      name="DIRECCIONES" />
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ANNO]"
+                      dataType="i4"
+                      name="ANNO" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
-                      dataType="dbDate"
-                      name="FECHA_INS" />
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MES]"
+                      dataType="i4"
+                      name="MES" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DIA]"
+                      dataType="i4"
+                      name="DIA" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Direccion\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Fecha\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Direccion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Fecha\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Direccion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Fecha\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Direccion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Fecha\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1389,10 +1087,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Direccion.Paths[ODBC Source Output]"
-              endId="Package\Data Flow Direccion\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Data Flow Fecha.Paths[ODBC Source Output]"
+              endId="Package\Data Flow Fecha\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="ODBC Source Output"
-              startId="Package\Data Flow Direccion\ODBC Source.Outputs[ODBC Source Output]" />
+              startId="Package\Data Flow Fecha\ODBC Source.Outputs[ODBC Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1966,21 +1664,6 @@
                       cachedName="id_cliente"
                       lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_cliente]" />
                     <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_correo]"
-                      cachedDataType="i4"
-                      cachedName="id_correo"
-                      lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_correo]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_telefono]"
-                      cachedDataType="i4"
-                      cachedName="id_telefono"
-                      lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_telefono]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_direccion]"
-                      cachedDataType="i4"
-                      cachedName="id_direccion"
-                      lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_direccion]" />
-                    <inputColumn
                       refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_tarjeta]"
                       cachedDataType="i4"
                       cachedName="id_tarjeta"
@@ -1999,44 +1682,11 @@
                   name="Merge Join Right Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[id]"
+                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[id_fecha]"
                       cachedDataType="i4"
-                      cachedName="id"
+                      cachedName="id_fecha"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[fecha]"
-                      cachedDataType="date"
-                      cachedName="fecha"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[fecha]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[cantidad]"
-                      cachedDataType="i4"
-                      cachedName="cantidad"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[cantidad]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[total]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="total"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[total]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[pago]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pago"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[pago]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[comentario]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="comentario"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[comentario]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[id_detalle]"
-                      cachedDataType="i4"
-                      cachedName="id_detalle"
-                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[id_detalle]" />
+                      lineageId="Package\Data Flow Ordenes\Sort 3.Outputs[Sort Output].Columns[id_fecha]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2075,45 +1725,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_correo]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_correo]"
-                      name="id_correo">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_correo]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_telefono]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_telefono]"
-                      name="id_telefono">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_telefono]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_direccion]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_direccion]"
-                      name="id_direccion">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input].Columns[id_direccion]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_tarjeta]"
                       dataType="i4"
                       lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_tarjeta]"
@@ -2140,84 +1751,16 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[fecha]"
-                      dataType="date"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[fecha]"
-                      name="fecha">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[fecha]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[cantidad]"
+                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_fecha]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[cantidad]"
-                      name="cantidad">
+                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_fecha]"
+                      name="id_fecha">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[cantidad]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[total]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[total]"
-                      name="total">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[total]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[pago]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[pago]"
-                      name="pago">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[pago]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[comentario]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[comentario]"
-                      name="comentario">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[comentario]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_detalle]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_detalle]"
-                      name="id_detalle">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[id_detalle]}</property>
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input].Columns[id_fecha]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2226,11 +1769,405 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Ordenes\ODBC Source"
+              refId="Package\Data Flow Ordenes\Merge Join 2"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_orden]"
+                      cachedDataType="i4"
+                      cachedName="id_orden"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_orden]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_cliente]"
+                      cachedDataType="i4"
+                      cachedName="id_cliente"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_cliente]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_tarjeta]"
+                      cachedDataType="i4"
+                      cachedName="id_tarjeta"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_tarjeta]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_producto]"
+                      cachedDataType="i4"
+                      cachedName="id_producto"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_producto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_fecha]"
+                      cachedDataType="i4"
+                      cachedName="id_fecha"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_fecha]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[fecha]"
+                      cachedDataType="date"
+                      cachedName="fecha"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[fecha]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[cantidad]"
+                      cachedDataType="i4"
+                      cachedName="cantidad"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[cantidad]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[total]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="total"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[total]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[pago]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pago"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[pago]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[comentario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="comentario"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[comentario]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[id_detalle]"
+                      cachedDataType="i4"
+                      cachedName="id_detalle"
+                      lineageId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output].Columns[id_detalle]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_orden]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_orden]"
+                      name="id_orden"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_orden]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_cliente]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_cliente]"
+                      name="id_cliente">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_cliente]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_tarjeta]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_tarjeta]"
+                      name="id_tarjeta">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_tarjeta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_producto]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_producto]"
+                      name="id_producto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_producto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_fecha]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_fecha]"
+                      name="id_fecha">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input].Columns[id_fecha]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[fecha]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[fecha]"
+                      name="fecha">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[fecha]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[cantidad]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[cantidad]"
+                      name="cantidad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[cantidad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[total]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[total]"
+                      name="total">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[total]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[pago]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[pago]"
+                      name="pago">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[pago]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[comentario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[comentario]"
+                      name="comentario">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[comentario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_detalle]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_detalle]"
+                      name="id_detalle">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input].Columns[id_detalle]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Ordenes\ODBC Fechas"
               componentClassID="Microsoft.SSISODBCSrc"
               contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="ODBC Source"
-              name="ODBC Source"
+              name="ODBC Fechas"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+aplicada.ordenes.id AS ID_FECHA
+FROM aplicada.ordenes</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Ordenes\ODBC Fechas.Connections[ODBCConnection]"
+                  connectionManagerID="{85C4E8F7-59C3-457D-B437-233A966FB871}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.7.b61976_aplicada.laboratorios1]"
+                  description="The ODBC runtime connection used to access the database."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].Columns[id_fecha]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].ExternalColumns[id_fecha]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].Columns[id_fecha]"
+                      name="id_fecha" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].ExternalColumns[id_fecha]"
+                      dataType="i4"
+                      name="id_fecha" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output].Columns[id_fecha]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].ExternalColumns[id_fecha]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output].Columns[id_fecha]"
+                      name="id_fecha" />
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Ordenes\ODBC Ordenes"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="ODBC Source"
+              name="ODBC Ordenes"
               usesDispositions="true"
               version="1">
               <properties>
@@ -2247,20 +2184,11 @@
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
 aplicada.ordenes.id AS ID_ORDEN,
 aplicada.clientes.id_cliente AS ID_CLIENTE,
-aplicada.correos.id AS ID_CORREO,
-aplicada.telefonos.id AS ID_TELEFONO,
-aplicada.direcciones.id AS ID_DIRECCION,
 aplicada.tarjetas.id AS ID_TARJETA,
 aplicada.productos.id AS ID_PRODUCTO
 FROM aplicada.ordenes
 INNER JOIN aplicada.clientes
     ON aplicada.clientes.id_cliente = aplicada.ordenes.id_cliente
-    INNER JOIN aplicada.correos
-        ON aplicada.correos.id_cliente = aplicada.ordenes.id_cliente
-        INNER JOIN aplicada.telefonos
-            ON aplicada.telefonos.id_cliente = aplicada.ordenes.id_cliente
-            INNER JOIN aplicada.direcciones
-                ON aplicada.direcciones.id_cliente = aplicada.ordenes.id_cliente
                 INNER JOIN aplicada.tarjetas
                     ON aplicada.tarjetas.id_cliente = aplicada.ordenes.id_cliente
                     INNER JOIN aplicada.productos
@@ -2314,7 +2242,7 @@ INNER JOIN aplicada.clientes
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Ordenes\ODBC Source.Connections[ODBCConnection]"
+                  refId="Package\Data Flow Ordenes\ODBC Ordenes.Connections[ODBCConnection]"
                   connectionManagerID="{85C4E8F7-59C3-457D-B437-233A966FB871}:external"
                   connectionManagerRefId="Project.ConnectionManagers[163.178.107.7.b61976_aplicada.laboratorios1]"
                   description="The ODBC runtime connection used to access the database."
@@ -2322,145 +2250,97 @@ INNER JOIN aplicada.clientes
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output]"
+                  refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output]"
                   errorRowDisposition="FailComponent"
                   name="ODBC Source Output"
                   truncationRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_orden]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_orden]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_orden]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_orden]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_orden]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_orden]"
                       mappedColumnId="Package\Data Flow Ordenes\302:invalid"
                       name="id_orden" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_cliente]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_cliente]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_cliente]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_cliente]"
                       name="id_cliente" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_correo]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_tarjeta]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_correo]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_correo]"
-                      name="id_correo" />
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_telefono]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_telefono]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_telefono]"
-                      name="id_telefono" />
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_direccion]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_direccion]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_direccion]"
-                      name="id_direccion" />
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_tarjeta]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_tarjeta]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_tarjeta]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_tarjeta]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_tarjeta]"
                       name="id_tarjeta" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_producto]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_producto]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_producto]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_producto]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_producto]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_producto]"
                       name="id_producto" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_orden]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_orden]"
                       dataType="i4"
                       mappedColumnId="Package\Data Flow Ordenes\302:invalid"
                       name="id_orden" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
                       dataType="i4"
                       name="id_cliente" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_correo]"
-                      dataType="i4"
-                      name="id_correo" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_telefono]"
-                      dataType="i4"
-                      name="id_telefono" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_direccion]"
-                      dataType="i4"
-                      name="id_direccion" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_tarjeta]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_tarjeta]"
                       dataType="i4"
                       name="id_tarjeta" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_producto]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_producto]"
                       dataType="i4"
                       name="id_producto" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output]"
+                  refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output]"
                   isErrorOut="true"
                   name="ODBC Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_orden]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_orden]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_orden]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_orden]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_orden]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_orden]"
                       name="id_orden" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_cliente]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_cliente]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_cliente]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_cliente]"
                       name="id_cliente" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_correo]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_tarjeta]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_correo]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_correo]"
-                      name="id_correo" />
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_telefono]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_telefono]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_telefono]"
-                      name="id_telefono" />
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_direccion]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_direccion]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_direccion]"
-                      name="id_direccion" />
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_tarjeta]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_tarjeta]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_tarjeta]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_tarjeta]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_tarjeta]"
                       name="id_tarjeta" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_producto]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_producto]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_producto]"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[id_producto]"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].ExternalColumns[id_producto]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[id_producto]"
                       name="id_producto" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2545,70 +2425,58 @@ INNER JOIN aplicada.clientes
                       cachedDataType="i4"
                       cachedName="id_cliente"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_cliente]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_correo]"
-                      cachedDataType="i4"
-                      cachedName="id_correo"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CORREO]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_correo]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_telefono]"
-                      cachedDataType="i4"
-                      cachedName="id_telefono"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_TELEFONO]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_telefono]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_direccion]"
-                      cachedDataType="i4"
-                      cachedName="id_direccion"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_DIRECCION]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_direccion]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_cliente]" />
                     <inputColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_tarjeta]"
                       cachedDataType="i4"
                       cachedName="id_tarjeta"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_TARJETA]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_tarjeta]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_tarjeta]" />
                     <inputColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_producto]"
                       cachedDataType="i4"
                       cachedName="id_producto"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PRODUCTO]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_producto]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_producto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_fecha]"
+                      cachedDataType="i4"
+                      cachedName="id_fecha"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_FECHA]"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_fecha]" />
                     <inputColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cantidad]"
                       cachedDataType="i4"
                       cachedName="cantidad"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[cantidad]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[cantidad]" />
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_detalle]"
+                      cachedDataType="i4"
+                      cachedName="id_detalle"
+                      externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_DETALLE]"
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_detalle]" />
                     <inputColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_orden]"
                       cachedDataType="i4"
                       cachedName="id_orden"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_ORDENES]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_orden]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[id_orden]" />
                     <inputColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[total]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="total"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRECIO_TOTAL]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[total]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[total]" />
                     <inputColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[pago]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="pago"
                       externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_PAGO]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[pago]" />
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_detalle]"
-                      cachedDataType="i4"
-                      cachedName="id_detalle"
-                      externalMetadataColumnId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_DETALLE]"
-                      lineageId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output].Columns[id_detalle]" />
+                      lineageId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output].Columns[pago]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2621,21 +2489,13 @@ INNER JOIN aplicada.clientes
                       dataType="i4"
                       name="ID_CLIENTE" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CORREO]"
-                      dataType="i4"
-                      name="ID_CORREO" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_TARJETA]"
                       dataType="i4"
                       name="ID_TARJETA" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_DIRECCION]"
+                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_FECHA]"
                       dataType="i4"
-                      name="ID_DIRECCION" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_TELEFONO]"
-                      dataType="i4"
-                      name="ID_TELEFONO" />
+                      name="ID_FECHA" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PRODUCTO]"
                       dataType="i4"
@@ -2984,7 +2844,7 @@ INNER JOIN aplicada.clientes
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">true</property>
+                  name="EliminateDuplicates">false</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the maximum number of threads to use for sorting."
@@ -3000,8 +2860,7 @@ INNER JOIN aplicada.clientes
                       refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_orden]"
                       cachedDataType="i4"
                       cachedName="id_orden"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_orden]"
-                      mappedColumnId="Package\Data Flow Ordenes\302:invalid">
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_orden]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -3017,55 +2876,7 @@ INNER JOIN aplicada.clientes
                       refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_cliente]"
                       cachedDataType="i4"
                       cachedName="id_cliente"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_cliente]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_correo]"
-                      cachedDataType="i4"
-                      cachedName="id_correo"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_correo]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_telefono]"
-                      cachedDataType="i4"
-                      cachedName="id_telefono"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_telefono]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_direccion]"
-                      cachedDataType="i4"
-                      cachedName="id_direccion"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_direccion]">
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_cliente]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -3081,7 +2892,7 @@ INNER JOIN aplicada.clientes
                       refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_tarjeta]"
                       cachedDataType="i4"
                       cachedName="id_tarjeta"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_tarjeta]">
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_tarjeta]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -3097,7 +2908,7 @@ INNER JOIN aplicada.clientes
                       refId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input].Columns[id_producto]"
                       cachedDataType="i4"
                       cachedName="id_producto"
-                      lineageId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_producto]">
+                      lineageId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_producto]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -3123,7 +2934,6 @@ INNER JOIN aplicada.clientes
                       refId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_orden]"
                       dataType="i4"
                       lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_orden]"
-                      mappedColumnId="Package\Data Flow Ordenes\302:invalid"
                       name="id_orden"
                       sortKeyPosition="1">
                       <properties>
@@ -3131,7 +2941,7 @@ INNER JOIN aplicada.clientes
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_orden]}</property>
+                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_orden]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -3144,46 +2954,7 @@ INNER JOIN aplicada.clientes
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_cliente]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_correo]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_correo]"
-                      name="id_correo">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_correo]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_telefono]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_telefono]"
-                      name="id_telefono">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_telefono]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_direccion]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output].Columns[id_direccion]"
-                      name="id_direccion">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_direccion]}</property>
+                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_cliente]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -3196,7 +2967,7 @@ INNER JOIN aplicada.clientes
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_tarjeta]}</property>
+                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_tarjeta]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -3209,7 +2980,75 @@ INNER JOIN aplicada.clientes
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output].Columns[id_producto]}</property>
+                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output].Columns[id_producto]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Ordenes\Sort 3"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Ordenes\Sort 3.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Ordenes\Sort 3.Inputs[Sort Input].Columns[id_fecha]"
+                      cachedDataType="i4"
+                      cachedName="id_fecha"
+                      lineageId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].Columns[id_fecha]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Ordenes\Sort 3.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Ordenes\Sort 3.Outputs[Sort Output].Columns[id_fecha]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Ordenes\Sort 3.Outputs[Sort Output].Columns[id_fecha]"
+                      name="id_fecha"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output].Columns[id_fecha]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3231,19 +3070,29 @@ INNER JOIN aplicada.clientes
               startId="Package\Data Flow Ordenes\Excel Detalles.Outputs[Excel Source Output]" />
             <path
               refId="Package\Data Flow Ordenes.Paths[Merge Join Output]"
-              endId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input]"
+              endId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Ordenes.Paths[Merge Join Output1]"
+              endId="Package\Data Flow Ordenes\Merge Join 2.Inputs[Merge Join Right Input]"
               name="Merge Join Output"
               startId="Package\Data Flow Ordenes\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Data Flow Ordenes.Paths[Merge Join Output1]"
+              refId="Package\Data Flow Ordenes.Paths[Merge Join Output2]"
               endId="Package\Data Flow Ordenes\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Merge Join Output"
-              startId="Package\Data Flow Ordenes\Merge Join 1.Outputs[Merge Join Output]" />
+              startId="Package\Data Flow Ordenes\Merge Join 2.Outputs[Merge Join Output]" />
             <path
               refId="Package\Data Flow Ordenes.Paths[ODBC Source Output]"
               endId="Package\Data Flow Ordenes\Sort 2.Inputs[Sort Input]"
               name="ODBC Source Output"
-              startId="Package\Data Flow Ordenes\ODBC Source.Outputs[ODBC Source Output]" />
+              startId="Package\Data Flow Ordenes\ODBC Ordenes.Outputs[ODBC Source Output]" />
+            <path
+              refId="Package\Data Flow Ordenes.Paths[ODBC Source Output1]"
+              endId="Package\Data Flow Ordenes\Sort 3.Inputs[Sort Input]"
+              name="ODBC Source Output"
+              startId="Package\Data Flow Ordenes\ODBC Fechas.Outputs[ODBC Source Output]" />
             <path
               refId="Package\Data Flow Ordenes.Paths[Sort Output]"
               endId="Package\Data Flow Ordenes\Merge Join.Inputs[Merge Join Left Input]"
@@ -3259,6 +3108,11 @@ INNER JOIN aplicada.clientes
               endId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Data Flow Ordenes\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Ordenes.Paths[Sort Output3]"
+              endId="Package\Data Flow Ordenes\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Ordenes\Sort 3.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3884,358 +3738,23 @@ INNER JOIN aplicada.clientes
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Data Flow Telefono"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{095370EB-07BB-4CD9-95FC-81698BF70B7B}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Telefono"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Data Flow Telefono\ODBC Source"
-              componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="ODBC Source"
-              name="ODBC Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="The name of the table to be fetched."
-                  expressionType="Notify"
-                  name="TableName">"aplicada"."telefonos"</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the number of rows fetched per batch."
-                  expressionType="Notify"
-                  name="BatchSize">1000</property>
-                <property
-                  dataType="System.Int32"
-                  description="Determines the chunk size allocation for LOB columns"
-                  expressionType="Notify"
-                  name="LobChunkSize">32768</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
-                  expressionType="Notify"
-                  name="ExposeCharColumnsAsUnicode">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
-                  expressionType="Notify"
-                  name="StatementTimeout">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The code page to use when code page information is unavailable from the data source."
-                  expressionType="Notify"
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Int32"
-                  description="The method used for fetching data."
-                  expressionType="Notify"
-                  name="FetchMethod">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="The ODBC C data type for binding numeric data."
-                  expressionType="Notify"
-                  name="BindNumericAs">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
-                  expressionType="Notify"
-                  name="BindCharColumnsAs">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="The mode used to access the database."
-                  expressionType="Notify"
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Telefono\ODBC Source.Connections[ODBCConnection]"
-                  connectionManagerID="{85C4E8F7-59C3-457D-B437-233A966FB871}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.7.b61976_aplicada.laboratorios1]"
-                  description="The ODBC runtime connection used to access the database."
-                  name="ODBCConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output]"
-                  errorRowDisposition="FailComponent"
-                  name="ODBC Source Output"
-                  truncationRowDisposition="FailComponent">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[id]"
-                      name="id" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[numero]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[numero]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[numero]"
-                      name="numero" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]"
-                      dataType="dbDate"
-                      externalMetadataColumnId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]"
-                      name="fecha_ins" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[numero]"
-                      dataType="i4"
-                      name="numero" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id_cliente]"
-                      dataType="i4"
-                      name="id_cliente" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      dataType="dbDate"
-                      name="fecha_ins" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output]"
-                  isErrorOut="true"
-                  name="ODBC Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[id]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[id]"
-                      name="id" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[numero]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[numero]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[numero]"
-                      name="numero" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[fecha_ins]"
-                      dataType="dbDate"
-                      externalMetadataColumnId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[fecha_ins]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[fecha_ins]"
-                      name="fecha_ins" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Telefono\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[DW].[TELEFONOS]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Telefono\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{BA736A8D-B001-4FEE-B7F7-32377F5A382F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[163.178.107.10.IF6201_Proyecto3_JeMaPaFaRa.laboratorios]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
-                      cachedDataType="i4"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[numero]"
-                      cachedDataType="i4"
-                      cachedName="numero"
-                      externalMetadataColumnId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[numero]" />
-                    <inputColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fecha_ins]"
-                      cachedDataType="dbDate"
-                      cachedName="fecha_ins"
-                      externalMetadataColumnId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
-                      lineageId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output].Columns[fecha_ins]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      dataType="i4"
-                      name="ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NUMERO]"
-                      dataType="i4"
-                      name="NUMERO" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_INS]"
-                      dataType="dbDate"
-                      name="FECHA_INS" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Telefono\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Telefono\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Telefono\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Telefono\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Data Flow Telefono.Paths[ODBC Source Output]"
-              endId="Package\Data Flow Telefono\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="ODBC Source Output"
-              startId="Package\Data Flow Telefono\ODBC Source.Outputs[ODBC Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{2389CF19-B727-4ED6-B6C6-AAB3A420A0B0}"
+      DTS:DTSID="{73A5EB52-A390-49C2-BAB9-FBC3082C0043}"
       DTS:From="Package\Data Flow Cliente"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Data Flow Correo" />
+      DTS:To="Package\Data Flow Fecha" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{3E99A333-1419-4A8C-92E5-050E27C371D4}"
-      DTS:From="Package\Data Flow Correo"
+      DTS:DTSID="{7176D831-324B-4E0A-8077-4B4EF07B7FA8}"
+      DTS:From="Package\Data Flow Fecha"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Data Flow Direccion" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{D3F5379A-C16C-47D2-BDB0-4D68A4D491F7}"
-      DTS:From="Package\Data Flow Direccion"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 2"
-      DTS:To="Package\Data Flow Telefono" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{713FDE72-147A-4CED-96FD-139DCCDEDA54}"
-      DTS:From="Package\Data Flow Telefono"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 3"
       DTS:To="Package\Data Flow Tarjeta" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
@@ -4277,150 +3796,26 @@ INNER JOIN aplicada.clientes
         <NodeLayout
           Size="166,42"
           Id="Package\Data Flow Cliente"
-          TopLeft="465,21" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Data Flow Correo"
-          TopLeft="505,68" />
+          TopLeft="458,89" />
         <NodeLayout
           Size="202,42"
           Id="Package\Data Flow Detalle_Orden"
-          TopLeft="717,310" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Direccion"
-          TopLeft="544,116" />
+          TopLeft="629,286" />
         <NodeLayout
           Size="174,42"
           Id="Package\Data Flow Ordenes"
-          TopLeft="786,359" />
+          TopLeft="698,335" />
         <NodeLayout
           Size="175,42"
           Id="Package\Data Flow Producto"
-          TopLeft="669,262" />
+          TopLeft="581,238" />
         <NodeLayout
           Size="166,42"
           Id="Package\Data Flow Tarjeta"
-          TopLeft="629,214" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Data Flow Telefono"
-          TopLeft="588,165" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="631,42">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.5,26"
-              Start="0,0"
-              End="27.5,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="23.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.5,0"
-                    Point2="27.5,0"
-                    Point3="27.5,4" />
-                  <mssgle:LineSegment
-                    End="27.5,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="670,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38.5,27"
-              Start="0,0"
-              End="38.5,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="34.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.5,0"
-                    Point2="38.5,0"
-                    Point3="38.5,4" />
-                  <mssgle:LineSegment
-                    End="38.5,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="721,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29,28"
-              Start="0,0"
-              End="29,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25,0"
-                    Point2="29,0"
-                    Point3="29,4" />
-                  <mssgle:LineSegment
-                    End="29,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="762,186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19,28"
-              Start="0,0"
-              End="19,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="15,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15,0"
-                    Point2="19,0"
-                    Point3="19,4" />
-                  <mssgle:LineSegment
-                    End="19,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="541,190" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
-          TopLeft="795,235">
+          TopLeft="707,211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4448,7 +3843,7 @@ INNER JOIN aplicada.clientes
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 5]"
-          TopLeft="844,283">
+          TopLeft="756,259">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4476,7 +3871,7 @@ INNER JOIN aplicada.clientes
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 6]"
-          TopLeft="919,331">
+          TopLeft="831,307">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4494,6 +3889,66 @@ INNER JOIN aplicada.clientes
                     Point3="27,4" />
                   <mssgle:LineSegment
                     End="27,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Data Flow Fecha"
+          TopLeft="499,139" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="624,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23,29"
+              Start="0,0"
+              End="23,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19,0"
+                    Point2="23,0"
+                    Point3="23,4" />
+                  <mssgle:LineSegment
+                    End="23,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="661,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33,30"
+              Start="0,0"
+              End="33,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,0"
+                    Point2="33,0"
+                    Point3="33,4" />
+                  <mssgle:LineSegment
+                    End="33,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4584,84 +4039,6 @@ INNER JOIN aplicada.clientes
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow Correo">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Data Flow Correo\ODBC Source"
-          TopLeft="352,48" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Correo\OLE DB Destination"
-          TopLeft="773,308" />
-        <EdgeLayout
-          Id="Package\Data Flow Correo.Paths[ODBC Source Output]"
-          TopLeft="426.5,90">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="435,218"
-              Start="0,0"
-              End="435,210.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,105" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,105"
-                    Point2="0,109"
-                    Point3="4,109" />
-                  <mssgle:LineSegment
-                    End="431,109" />
-                  <mssgle:CubicBezierSegment
-                    Point1="431,109"
-                    Point2="435,109"
-                    Point3="435,113" />
-                  <mssgle:LineSegment
-                    End="435,210.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Correo\ODBC Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Correo\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Data Flow Detalle_Orden">
     <LayoutInfo>
       <GraphLayout
@@ -4740,96 +4117,14 @@ INNER JOIN aplicada.clientes
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow Direccion">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Data Flow Direccion\ODBC Source"
-          TopLeft="363,55" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Direccion\OLE DB Destination"
-          TopLeft="818,301" />
-        <EdgeLayout
-          Id="Package\Data Flow Direccion.Paths[ODBC Source Output]"
-          TopLeft="437.5,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="469,204"
-              Start="0,0"
-              End="469,196.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,98" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,98"
-                    Point2="0,102"
-                    Point3="4,102" />
-                  <mssgle:LineSegment
-                    End="465,102" />
-                  <mssgle:CubicBezierSegment
-                    Point1="465,102"
-                    Point2="469,102"
-                    Point3="469,106" />
-                  <mssgle:LineSegment
-                    End="469,196.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Direccion\ODBC Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Direccion\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Data Flow Ordenes">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142,42"
-          Id="Package\Data Flow Ordenes\Merge Join 1"
-          TopLeft="472,272" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Data Flow Ordenes\ODBC Source"
-          TopLeft="333,56" />
+          Size="156,42"
+          Id="Package\Data Flow Ordenes\ODBC Ordenes"
+          TopLeft="167,57" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Ordenes\Excel Ordenes"
@@ -4838,10 +4133,6 @@ INNER JOIN aplicada.clientes
           Size="108,42"
           Id="Package\Data Flow Ordenes\Sort 1"
           TopLeft="721,130" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Data Flow Ordenes\Sort 2"
-          TopLeft="348,131" />
         <NodeLayout
           Size="99,42"
           Id="Package\Data Flow Ordenes\Sort"
@@ -4854,44 +4145,6 @@ INNER JOIN aplicada.clientes
           Size="149,42"
           Id="Package\Data Flow Ordenes\Excel Detalles"
           TopLeft="693,54" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Ordenes\OLE DB Destination"
-          TopLeft="461,366" />
-        <EdgeLayout
-          Id="Package\Data Flow Ordenes.Paths[Sort Output2]"
-          TopLeft="402,173">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.666666666667,99"
-              Start="0,0"
-              End="118.666666666667,91.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,81.7381615598886" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,81.7381615598886"
-                    Point2="0,85.7381615598886"
-                    Point3="4,85.7381615598886" />
-                  <mssgle:LineSegment
-                    End="114.666666666667,85.7381615598886" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.666666666667,85.7381615598886"
-                    Point2="118.666666666667,85.7381615598886"
-                    Point3="118.666666666667,89.7381615598886" />
-                  <mssgle:LineSegment
-                    End="118.666666666667,91.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Ordenes.Paths[Sort Output1]"
           TopLeft="775,172">
@@ -4961,84 +4214,6 @@ INNER JOIN aplicada.clientes
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Ordenes.Paths[ODBC Source Output]"
-          TopLeft="404.75,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Ordenes.Paths[Merge Join Output1]"
-          TopLeft="546.25,314">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Ordenes.Paths[Merge Join Output]"
-          TopLeft="679.5,240">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-114.166666666667,32"
-              Start="0,0"
-              End="-114.166666666667,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.9860724233983" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9860724233983"
-                    Point2="0,18.9860724233983"
-                    Point3="-4,18.9860724233983" />
-                  <mssgle:LineSegment
-                    End="-110.166666666667,18.9860724233983" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-110.166666666667,18.9860724233983"
-                    Point2="-114.166666666667,18.9860724233983"
-                    Point3="-114.166666666667,22.9860724233983" />
-                  <mssgle:LineSegment
-                    End="-114.166666666667,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Data Flow Ordenes.Paths[Excel Source Output1]"
           TopLeft="771.25,96">
           <EdgeLayout.Curve>
@@ -5082,11 +4257,237 @@ INNER JOIN aplicada.clientes
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Ordenes\ODBC Fechas"
+          TopLeft="343,56" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Ordenes\Sort 2"
+          TopLeft="186,128" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Ordenes\Sort 3"
+          TopLeft="366,131" />
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[ODBC Source Output]"
+          TopLeft="242.5,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[ODBC Source Output1]"
+          TopLeft="419,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Data Flow Ordenes\Merge Join 1"
+          TopLeft="262,196" />
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[Sort Output2]"
+          TopLeft="240,170">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.6666666666667,26"
+              Start="0,0"
+              End="70.6666666666667,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4261838440111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4261838440111"
+                    Point2="0,15.4261838440111"
+                    Point3="4,15.4261838440111" />
+                  <mssgle:LineSegment
+                    End="66.6666666666667,15.4261838440111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.6666666666667,15.4261838440111"
+                    Point2="70.6666666666667,15.4261838440111"
+                    Point3="70.6666666666667,19.4261838440111" />
+                  <mssgle:LineSegment
+                    End="70.6666666666667,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[Sort Output3]"
+          TopLeft="420,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64.6666666666667,23"
+              Start="0,0"
+              End="-64.6666666666667,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.64623955431755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.64623955431755"
+                    Point2="0,13.6462395543175"
+                    Point3="-4,13.6462395543175" />
+                  <mssgle:LineSegment
+                    End="-60.6666666666667,13.6462395543175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.6666666666667,13.6462395543175"
+                    Point2="-64.6666666666667,13.6462395543175"
+                    Point3="-64.6666666666667,17.6462395543175" />
+                  <mssgle:LineSegment
+                    End="-64.6666666666667,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Data Flow Ordenes\Merge Join 2"
+          TopLeft="440,280" />
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[Merge Join Output]"
+          TopLeft="333,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178,42"
+              Start="0,0"
+              End="178,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
+                  <mssgle:LineSegment
+                    End="174,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="174,21"
+                    Point2="178,21"
+                    Point3="178,25" />
+                  <mssgle:LineSegment
+                    End="178,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[Merge Join Output1]"
+          TopLeft="679.5,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-146.166666666667,40"
+              Start="0,0"
+              End="-146.166666666667,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7325905292479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.7325905292479"
+                    Point2="0,23.7325905292479"
+                    Point3="-4,23.7325905292479" />
+                  <mssgle:LineSegment
+                    End="-142.166666666667,23.7325905292479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-142.166666666667,23.7325905292479"
+                    Point2="-146.166666666667,23.7325905292479"
+                    Point3="-146.166666666667,27.7325905292479" />
+                  <mssgle:LineSegment
+                    End="-146.166666666667,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Ordenes\OLE DB Destination"
+          TopLeft="424,370" />
+        <EdgeLayout
+          Id="Package\Data Flow Ordenes.Paths[Merge Join Output2]"
+          TopLeft="511.75,322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Ordenes\ODBC Source">
+    design-time-name="Package\Data Flow Ordenes\ODBC Ordenes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5108,19 +4509,6 @@ INNER JOIN aplicada.clientes
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Ordenes\Excel Detalles">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Ordenes\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5289,59 +4677,73 @@ INNER JOIN aplicada.clientes
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow Telefono">
+    design-time-name="Package\Data Flow Fecha">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149,42"
-          Id="Package\Data Flow Telefono\ODBC Source"
-          TopLeft="391,64" />
+          Id="Package\Data Flow Fecha\ODBC Source"
+          TopLeft="490,51" />
         <NodeLayout
           Size="177,42"
-          Id="Package\Data Flow Telefono\OLE DB Destination"
-          TopLeft="855,306" />
+          Id="Package\Data Flow Fecha\OLE DB Destination"
+          TopLeft="612,253" />
         <EdgeLayout
-          Id="Package\Data Flow Telefono.Paths[ODBC Source Output]"
-          TopLeft="465.5,106">
+          Id="Package\Data Flow Fecha.Paths[ODBC Source Output]"
+          TopLeft="564.5,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="478,200"
+              EndConnector="136,160"
               Start="0,0"
-              End="478,192.5">
+              End="136,152.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,96" />
+                    End="0,76" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,96"
-                    Point2="0,100"
-                    Point3="4,100" />
+                    Point1="0,76"
+                    Point2="0,80"
+                    Point3="4,80" />
                   <mssgle:LineSegment
-                    End="474,100" />
+                    End="132,80" />
                   <mssgle:CubicBezierSegment
-                    Point1="474,100"
-                    Point2="478,100"
-                    Point3="478,104" />
+                    Point1="132,80"
+                    Point2="136,80"
+                    Point3="136,84" />
                   <mssgle:LineSegment
-                    End="478,192.5" />
+                    End="136,152.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Telefono\ODBC Source">
+    design-time-name="Package\Data Flow Fecha\ODBC Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Ordenes\ODBC Fechas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Ordenes\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5354,7 +4756,7 @@ INNER JOIN aplicada.clientes
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Telefono\OLE DB Destination">
+    design-time-name="Package\Data Flow Fecha\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
