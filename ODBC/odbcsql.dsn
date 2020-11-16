@@ -1,0 +1,6 @@
+[ODBC]
+DRIVER=SQL Server Native Client 11.0
+UID=laboratorios
+WSID=LAPTOP-S3M5REQ9
+APP=Microsoft® Visual Studio®
+SERVER=163.178.107.10
