@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="163.178.107.10.IF6201_Proyecto3_JeMaPaFaRa.laboratorios"
-  DTS:DTSID="{0233E521-2E3E-45CF-A1E2-E74ED4B10670}"
+  DTS:DTSID="{BA736A8D-B001-4FEE-B7F7-32377F5A382F}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=163.178.107.10;User ID=laboratorios;Initial Catalog=IF6201_Proyecto3_JeMaPaFaRa;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATxUMEA8IRUKNMMa+rwyMiwAAAAACAAAAAAAQZgAAAAEAACAAAAD6GO8TU4JZdGYpI6NQxdW1/J5qUtI4pWNLSV2cxCtMsgAAAAAOgAAAAAIAACAAAAC7FquwMWbE/HiijKYd1c/fehkLB6b5Tc5IftI1crrYY4AAAABm5WSwqxEhs96Iwtepz+XxEDwBJ4HJVn6LTWaE8h7bUhN52tVT7mG6WhHZyG0Kp9hozFD+lwPJCa6xbnfOazUOhTlgaF44EBO4ITENewUkX5woGEHXSLOE30Ixr9BqpJzYscniXWu/ApbA37aud5y/1rGSKMbPkvr95sI25c5N1UAAAACIMo71AMMW4qwP7sSR6/tsZDXzZLsvB3bq/7YKPUe9WjdkQZLKaeZE+XWJLHmNO/rbhzwo94jSuDebDKeSFCZp</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATxUMEA8IRUKNMMa+rwyMiwAAAAACAAAAAAAQZgAAAAEAACAAAAByuhluZNPwus8FYX+iHhBR/mxqi6IUgKnQNyZNMK8tFAAAAAAOgAAAAAIAACAAAACbeltY3wmg2o+7a7UFBfJStTz7fa4a+t8RWGKUBlMKNIAAAAB8hNPz57PWPnKzNBmN4wbIVctlC5Pcaknaugu1Ga6ReELBx5cDxhteAOKIQs1xov6rT6A83Nwo3sK5k/SVFg5NGi+9AZl0DtWjzZxudAZ4QBx5W/syDEX2Nd8gnXw+KXHwaMpWWeKqLybUK5HKttL6dpz4KifMf3xQ8zHdzAlFA0AAAAAsWGzFGErF2WejclHR0sZh9do18qZcMrG9VGVIBatPg558uRsU1EetKfcj2/qgR5D7hwYud7uRTjLq26Yx3Prw</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

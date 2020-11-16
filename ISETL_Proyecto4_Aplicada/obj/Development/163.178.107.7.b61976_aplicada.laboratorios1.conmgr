@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="163.178.107.7.b61976_aplicada.laboratorios1"
+  DTS:DTSID="{85C4E8F7-59C3-457D-B437-233A966FB871}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="server=163.178.107.7;uid=laboratorios;Driver={PostgreSQL Unicode};database=b61976_aplicada;port=5432;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;d6=-101;optionalerrors=0;xaopt=1;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATxUMEA8IRUKNMMa+rwyMiwAAAAACAAAAAAAQZgAAAAEAACAAAAD861wsKU8wnHdCyKzV1oNl6yby17YW1j2EHSM87XWk8QAAAAAOgAAAAAIAACAAAACsdZt+S3sB/RiyNT2npg7sEdvl2/qF8pWlpZSOuie4zoAAAACjjg1YXSsuIMpartxs+9RfoVuAOA+SCKbIKGyMjW4MOWkPdngZoP579FpJMDeWeZY8rrPKNTFSWxh04IuiyaA/YrZOWeospbez6FPbb2fEKcAGwtrgKSRGBwQ6Lz41T6A1rrLpg+3l8lU50aDEWYrWRhtNcHA1OlHY6uUQfLxPrEAAAABqJx3SEEVQj/uvoNrSmV/YsCB0IeRgN0nPKPUf3z+qpwSkfCR2enjliIIhlFsuC3do6Fht4CdEvodgsg2JXuih</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
